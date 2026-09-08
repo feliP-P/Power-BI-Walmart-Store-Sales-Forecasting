@@ -12,7 +12,7 @@ Como parte de mi desarrollo continuo en el stack de datos, decidí poner a prueb
 ## 🗄️ Modelado Relacional (Vista de Modelo)
 Estructuré el modelo para asegurar que los filtros fluyan correctamente desde las dimensiones (`stores`, `Calendario`) hacia los hechos (`train`, `features`), aislando los cálculos en una tabla dedicada (`_Medidas`).
 
-![Esquema en Estrella de Walmart](link_a_tu_imagen_del_modelo_aqui.png)
+![Esquema en Estrella de Walmart](https://github.com/feliP-P/Power-BI-Walmart-Store-Sales-Forecasting/blob/main/esquema.jpg)
 
 ## 📊 Muestra de Código DAX
 Para evaluar el crecimiento real del negocio frente a la estacionalidad del retail, implementé métricas de inteligencia de tiempo y diseñé nuevos atributos para poder capturar correctamente la estacionalidad de navidad (la temporada de más ventas de todo el año). Un ejemplo clave para aislar el rendimiento durante feriados:
