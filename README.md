@@ -10,6 +10,20 @@ Como parte de mi desarrollo continuo en el stack de datos, decidí poner a prueb
 *   **DAX (Data Analysis Expressions):** Creación de medidas dinámicas e inteligencia de tiempo (Time Intelligence) para evaluar rendimiento interanual y rentabilidad.
 *   **Visualización & Forecasting:** Diseño de dashboards interactivos e implementación del algoritmo nativo de Suavizado Exponencial de Power BI para proyectar ventas futuras.
 
+## Dashboards: Gráficos
+![Dashboard 1 serie completa](https://github.com/feliP-P/Power-BI-Walmart-Store-Sales-Forecasting/blob/main/dashboard1.jpg)
+
+Luego desactivando podemos observar que efectivamente logramos capturar y eliminar el efecto de las fechas festivas. Se observa mejor que enero es el mes con menos ventas y otras dinamicas estacionales que quedaban obscurecidas por el impacto mayor de las fechas festivas.
+
+![Dashboard 1 sin holidays](https://github.com/feliP-P/Power-BI-Walmart-Store-Sales-Forecasting/blob/main/dashboard1SinFeriadosNiNavidad.jpg)
+
+En el segundo dashboard dispuse los scatter plots sobre los que realicé una regresión para poder ver mejor la relación y la dinámica entre las ventas y otros factores externos.
+
+![Dashboard 2 scatter plots y regresiones](https://github.com/feliP-P/Power-BI-Walmart-Store-Sales-Forecasting/blob/main/dashboard2.jpg)
+
+
+
+
 ## 🗄️ Modelado Relacional (Vista de Modelo)
 Estructuré el modelo para asegurar que los filtros fluyan correctamente desde las dimensiones (`stores`, `Calendario`) hacia los hechos (`train`, `features`), aislando los cálculos en una tabla dedicada (`_Medidas`).
 
