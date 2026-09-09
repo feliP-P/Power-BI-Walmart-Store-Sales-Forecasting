@@ -2,38 +2,45 @@
 
 ## 📌 Contexto del Proyecto
 Como parte de mi desarrollo continuo en el stack de datos, decidí poner a prueba mis habilidades de modelado y visualización utilizando el dataset de **Walmart Recruiting - Store Sales Forecasting** (Kaggle). En lugar de aplicar modelos de Machine Learning tradicionales en Python, el objetivo de este proyecto fue resolver el problema analítico íntegramente dentro del ecosistema de **Power BI**, emulando un entorno corporativo real donde las decisiones de negocio requieren visualizaciones interactivas e insights rápidos.
-(En una siguiente etapa planeo utilizar este mismo análisis para saltar a la creación de modelos de predicción de machine learning o modelos de estadísticos/series temporales)
+
+*(En una siguiente etapa planeo utilizar este mismo análisis para avanzar hacia la creación de modelos predictivos de Machine Learning o análisis estadístico avanzado de series temporales).*
 
 ## 🛠️ Stack Tecnológico y Flujo de Trabajo
-*   **Power Query (ETL):** Limpieza de datos, estandarización de formatos regionales (conversión de puntos decimales) y tratamiento de valores nulos (discretización de variables económicas y climáticas).
+*   **Power Query (ETL):** Limpieza de datos, estandarización de formatos regionales (conversión de separadores decimales) y tratamiento de valores nulos (discretización de variables económicas y climáticas).
 *   **Modelado de Datos:** Diseño de una base de datos analítica bajo un **Esquema en Estrella (Star Schema)**, separando tablas transaccionales de dimensiones descriptivas para optimizar el filtrado cruzado.
 *   **DAX (Data Analysis Expressions):** Creación de medidas dinámicas e inteligencia de tiempo (Time Intelligence) para evaluar rendimiento interanual y rentabilidad.
 *   **Visualización & Forecasting:** Diseño de dashboards interactivos e implementación del algoritmo nativo de Suavizado Exponencial de Power BI para proyectar ventas futuras.
 
-## Dashboards: Gráficos
-En el primer Dashboard agregué como gráfico principal un gráfico de líneas en el que podemos ver las ventas totales de los negocios de walmart a los largo del tiempo (desde febrero de 2010 hasta octubre de 2012) y luego extendemos el gráfico con la previsión para los siguientes 8 meses. Podemos observar en este gráfico que hay grandes picos de ventas en noviembre y diciembre correspondientes al black friday y navidad respectivamente y nuestra previsión logra capturarlo perfectamente, además de la depresión y recuperación en los meses posteriores, osea que logramos capturar bien el comportamiento de esta serie temporal.
-También agregué tablas con los datos especificos de las ventas de cada año, graficos comparativos de las cantidad de ventas que se produjeron en días festivos y en días normales, y el promedio de ventas en un día festivo y un día normal, gráficos que comparan las ventas que se produjeron en cada tipo de tienda y por último grafiqué la relación entre el tamaño de las tiendas y las ventas que producen (en donde observamos que, con mucho sentido, hay una correlación muy fuerte).
+## 📊 Dashboards y Visualizaciones
+
+### Dashboard 1: Serie Temporal, Estacionalidad y Proyección
+*   **Tendencia y Previsión:** En el gráfico principal de líneas se observan las ventas totales semanales (febrero 2010 – octubre 2012) y una extensión con la previsión para los 8 meses posteriores. El modelo captura con precisión los picos de ventas de noviembre y diciembre (Black Friday y Navidad), así como la contracción estacional y posterior recuperación en los meses siguientes.
+*   **Métricas y Rendimiento:** Incorporé tablas con datos de ventas anuales, comparativas entre semanas regulares y festivas (volumen total y promedio por día festivo vs. normal) y el desempeño por formato de tienda (Type A, B y C).
+*   **Correlación por Superficie:** Se incluye la relación directa entre el tamaño de la tienda y su volumen de facturación, donde se aprecia una correlación positiva marcada.
+
 ![Dashboard 1 serie completa](https://github.com/feliP-P/Power-BI-Walmart-Store-Sales-Forecasting/blob/main/dashboard1.jpg)
 
-Luego utilizando los filtros interactivos que agregamos, podemos "eliminar las ventas" de los días festivos y su efecto en las ventas, logrando observar el comportamiento de las ventas durante el resto de "días normales". Se observa mejor que enero es el mes con menos ventas y otras dinamicas estacionales que quedaban obscurecidas por el impacto mayor de las fechas festivas.
+#### Aislamiento de Días Normales (Filtrado de Feriados)
+A través de ingeniería de atributos (desarrollando un contador de semanas restantes hacia Navidad) y el uso de segmentadores interactivos, es posible aislar el efecto de las festividades para evaluar el comportamiento base del negocio. Al remover estos picos, se hace evidente que enero es históricamente el mes con menor facturación y se descubren dinámicas estacionales secundarias que quedaban enmascaradas por el impacto de fin de año.
 
 ![Dashboard 1 sin holidays](https://github.com/feliP-P/Power-BI-Walmart-Store-Sales-Forecasting/blob/main/dashboard1SinFeriadosNiNavidad.jpg)
 
-En el segundo dashboard dispuse los scatter plots sobre los que realicé una regresión para poder ver mejor la relación y la dinámica entre las ventas y otros factores externos, como el indice de desempleo (con una pequeña correlación negativa, es decir que cuando crece el indice decrecen las ventas), el indice CPI (con una pequeña correlación positiva) y la temperatura (en la que se ve una correlación positiva), aunque la mayoría de ventas se producen en torno a los 57° como se puede ver en el otro gráfico de Ventas Totales según la Temperatura media.
-También integré al igual que en el dashboard anterior algunos filtros interactivos para poder analizar como cambian estas relaciones y efectos en distintos momentos, distintas tiendas y si incluímos o no los días festivos en el análisis (en general los días festivos nos dificultan ver estas relaciones ya que siempre hay altas ventas sin importar los factores externos, por eso en esta imagen no los tomé en cuenta).
+### Dashboard 2: Factores Macroeconómicos y Clima
+Disposición de diagramas de dispersión (*scatter plots*) con líneas de regresión para analizar la correlación entre factores externos y las ventas semanales:
+*   **Nivel de Desempleo:** Muestra una correlación negativa moderada (a mayor tasa de desempleo, menor nivel de ventas).
+*   **Índice CPI:** Presenta una correlación ligeramente positiva.
+*   **Temperatura:** Revela una correlación positiva general, aunque el histograma discretizado por temperatura promedio evidencia que el grueso de la facturación se concentra alrededor de los 57 °F.
+*   **Filtros Interactivos:** Permiten evaluar cómo varían estas relaciones según tienda, período y presencia de feriados (se excluyeron los festivos en esta vista para evitar distorsiones causadas por la inelasticidad de la demanda en esas fechas).
 
 ![Dashboard 2 scatter plots y regresiones](https://github.com/feliP-P/Power-BI-Walmart-Store-Sales-Forecasting/blob/main/dashboard2.jpg)
 
-
-
-
 ## 🗄️ Modelado Relacional (Vista de Modelo)
-Estructuré el modelo para asegurar que los filtros fluyan correctamente desde las dimensiones (`stores`, `Calendario`) hacia los hechos (`train`, `features`), aislando los cálculos en una tabla dedicada (`_Medidas`).
+Estructuré el modelo relacional para asegurar que los filtros fluyan en sentido unidireccional (1:*) desde las dimensiones (`stores`, `Calendario`) hacia las tablas de hechos (`train`, `features`), aislando los cálculos en una tabla dedicada (`_Medidas`).
 
 ![Esquema en Estrella de Walmart](https://github.com/feliP-P/Power-BI-Walmart-Store-Sales-Forecasting/blob/main/esquema.jpg)
 
-## 📊 Muestra de Código DAX
-Para evaluar el crecimiento real del negocio frente a la estacionalidad del retail, implementé métricas de inteligencia de tiempo y diseñé nuevos atributos para poder capturar correctamente la estacionalidad de navidad (la temporada de más ventas de todo el año). Un ejemplo clave para aislar el rendimiento durante feriados:
+## 📐 Muestra de Código DAX
+Para evaluar el crecimiento frente a la estacionalidad del retail, implementé métricas de inteligencia de tiempo y diseñé atributos calculados para aislar la temporada navideña:
 
 ```dax
 Ventas en Feriados = 
