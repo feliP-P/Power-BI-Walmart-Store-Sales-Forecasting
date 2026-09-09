@@ -2,6 +2,7 @@
 
 ## 📌 Contexto del Proyecto
 Como parte de mi desarrollo continuo en el stack de datos, decidí poner a prueba mis habilidades de modelado y visualización utilizando el dataset de **Walmart Recruiting - Store Sales Forecasting** (Kaggle). En lugar de aplicar modelos de Machine Learning tradicionales en Python, el objetivo de este proyecto fue resolver el problema analítico íntegramente dentro del ecosistema de **Power BI**, emulando un entorno corporativo real donde las decisiones de negocio requieren visualizaciones interactivas e insights rápidos.
+(En una siguiente etapa planeo utilizar este mismo análisis para saltar a la creación de modelos de predicción de machine learning o modelos de estadísticos/series temporales)
 
 ## 🛠️ Stack Tecnológico y Flujo de Trabajo
 *   **Power Query (ETL):** Limpieza de datos, estandarización de formatos regionales (conversión de puntos decimales) y tratamiento de valores nulos (discretización de variables económicas y climáticas).
