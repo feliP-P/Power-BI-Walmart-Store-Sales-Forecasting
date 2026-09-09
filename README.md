@@ -11,7 +11,8 @@ Como parte de mi desarrollo continuo en el stack de datos, decidí poner a prueb
 *   **Visualización & Forecasting:** Diseño de dashboards interactivos e implementación del algoritmo nativo de Suavizado Exponencial de Power BI para proyectar ventas futuras.
 
 ## Dashboards: Gráficos
-
+En el primer Dashboard agregué como gráfico principal un gráfico de líneas en el que podemos ver las ventas totales de los negocios de walmart a los largo del tiempo (desde febrero de 2010 hasta octubre de 2012) y luego extendemos el gráfico con la previsión para los siguientes 8 meses. Podemos observar en este gráfico que hay grandes picos de ventas en noviembre y diciembre correspondientes al black friday y navidad respectivamente y nuestra previsión logra capturarlo perfectamente, además de la depresión y recuperación en los meses posteriores, osea que logramos capturar bien el comportamiento de esta serie temporal.
+También agregué tablas con los datos especificos de las ventas de cada año, graficos comparativos de las cantidad de ventas que se produjeron en días festivos y en días normales, y el promedio de ventas en un día festivo y un día normal, gráficos que comparan las ventas que se produjeron en cada tipo de tienda y por último grafiqué la relación entre el tamaño de las tiendas y las ventas que producen (en donde observamos que, con mucho sentido, hay una correlación muy fuerte).
 ![Dashboard 1 serie completa](https://github.com/feliP-P/Power-BI-Walmart-Store-Sales-Forecasting/blob/main/dashboard1.jpg)
 
 Luego utilizando los filtros interactivos que agregamos, podemos "eliminar las ventas" de los días festivos y su efecto en las ventas, logrando observar el comportamiento de las ventas durante el resto de "días normales". Se observa mejor que enero es el mes con menos ventas y otras dinamicas estacionales que quedaban obscurecidas por el impacto mayor de las fechas festivas.
