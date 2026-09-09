@@ -11,13 +11,15 @@ Como parte de mi desarrollo continuo en el stack de datos, decidí poner a prueb
 *   **Visualización & Forecasting:** Diseño de dashboards interactivos e implementación del algoritmo nativo de Suavizado Exponencial de Power BI para proyectar ventas futuras.
 
 ## Dashboards: Gráficos
+
 ![Dashboard 1 serie completa](https://github.com/feliP-P/Power-BI-Walmart-Store-Sales-Forecasting/blob/main/dashboard1.jpg)
 
-Luego desactivando podemos observar que efectivamente logramos capturar y eliminar el efecto de las fechas festivas. Se observa mejor que enero es el mes con menos ventas y otras dinamicas estacionales que quedaban obscurecidas por el impacto mayor de las fechas festivas.
+Luego utilizando los filtros interactivos que agregamos, podemos "eliminar las ventas" de los días festivos y su efecto en las ventas, logrando observar el comportamiento de las ventas durante el resto de "días normales". Se observa mejor que enero es el mes con menos ventas y otras dinamicas estacionales que quedaban obscurecidas por el impacto mayor de las fechas festivas.
 
 ![Dashboard 1 sin holidays](https://github.com/feliP-P/Power-BI-Walmart-Store-Sales-Forecasting/blob/main/dashboard1SinFeriadosNiNavidad.jpg)
 
-En el segundo dashboard dispuse los scatter plots sobre los que realicé una regresión para poder ver mejor la relación y la dinámica entre las ventas y otros factores externos.
+En el segundo dashboard dispuse los scatter plots sobre los que realicé una regresión para poder ver mejor la relación y la dinámica entre las ventas y otros factores externos, como el indice de desempleo (con una pequeña correlación negativa, es decir que cuando crece el indice decrecen las ventas), el indice CPI (con una pequeña correlación positiva) y la temperatura (en la que se ve una correlación positiva), aunque la mayoría de ventas se producen en torno a los 57° como se puede ver en el otro gráfico de Ventas Totales según la Temperatura media.
+También integré al igual que en el dashboard anterior algunos filtros interactivos para poder analizar como cambian estas relaciones y efectos en distintos momentos, distintas tiendas y si incluímos o no los días festivos en el análisis (en general los días festivos nos dificultan ver estas relaciones ya que siempre hay altas ventas sin importar los factores externos, por eso en esta imagen no los tomé en cuenta).
 
 ![Dashboard 2 scatter plots y regresiones](https://github.com/feliP-P/Power-BI-Walmart-Store-Sales-Forecasting/blob/main/dashboard2.jpg)
 
